@@ -1,21 +1,17 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+import { NativeRouter, Route, Routes } from 'react-router-native';
+import Nav from './Components/Nav';
+import Home from './Route/Home';
+import Login from './Route/Login';
 
 const App = () => {
   return (
-    <View style={styles.container}>
-      <Text>App</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NativeRouter>
+      <Routes>
+        <Route path='/' element={<Home/>}/>
+        <Route path='/login' element={<Login/>}/>
+      </Routes>
+      <Nav/>
+    </NativeRouter>
   );
 }
 
