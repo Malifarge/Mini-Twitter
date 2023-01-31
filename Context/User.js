@@ -1,7 +1,8 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 
+// import AsyncStorage from '@react-native-community/async-storage'
 import { createContext, useEffect, useState } from 'react'
-import { User } from '../api/Users'
+import { User } from '../API/User'
 
 const UserContext = createContext({})
 
@@ -10,27 +11,35 @@ const UserContextProvider = ({ children }) => {
   const [user, setUser] = useState(null)
 
   useEffect(() => {
-    const localToken = localStorage.getItem('token')
+    myLocalToken()
+  }, [])
+
+    const myLocalToken = async()=>{
+        const localToken = await AsyncStorage.getItem('token')
 
     if (localToken) {
       setToken(localToken)
     }
-  }, [])
+    }
 
   useEffect(() => {
-    if (token) {
-      localStorage.setItem('token', token)
-      getUser()
-    }
+    setUserWithToken()
   }, [token])
+
+    const setUserWithToken= async() =>{
+        if (token) {
+           await AsyncStorage.setItem('token', token)
+            getUser()
+          }
+    }
 
   const getUser = async () => {
     const userResponse = await User(token)
     setUser(userResponse)
   }
 
-  const logout = () => {
-    localStorage.removeItem('token')
+  const logout = async() => {
+    await AsyncStorage.removeItem('token')
     setUser(null)
   }
 

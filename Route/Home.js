@@ -15,7 +15,7 @@ export default Home = () =>{
         const response = await FetchAllTweets()
         setTweets(response)
     }
-    
+
     return(
         <View style={globalStyles.container}>
             <Text style={globalStyles.titre}>Home</Text>

@@ -1,10 +1,14 @@
 
+import { API_KEY } from 'react-native-dotenv'
+
 const FetchAllTweets = async () =>{
+
+    console.log(API_KEY)
     
     const request = await fetch('https://hzplqosigklsspekvjey.supabase.co/rest/v1/Tweets?select=*',{
         headers:{
-            apikey: process.env.API_KEY,
-            Authorization: `Bearer ${process.env.API_KEY}`
+            apikey: API_KEY,
+            Authorization: `Bearer ${API_KEY}`
         },
     })
 
