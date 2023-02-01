@@ -9,8 +9,8 @@ const Nav = () => {
       <Link to='/'>
         <Text style={navStyles.text}>Home</Text>
       </Link>
-      <Link to='/signup'>
-        <Text style={navStyles.text}>Signup</Text>
+      <Link to='/Profil'>
+        <Text style={navStyles.text}>Profil</Text>
       </Link>
     </View>
   )

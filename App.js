@@ -4,6 +4,7 @@ import Nav from './Components/Nav';
 import { UserContextProvider } from './Context/User';
 import Home from './Route/Home';
 import Login from './Route/Login';
+import { Profil } from './Route/Profil';
 import Signup from './Route/Signup';
 import { Tweet } from './Route/Tweet';
 
@@ -17,6 +18,7 @@ const App = () => {
           <Route path='/login' element={<Login/>}/>
           <Route path='/signup' element={<Signup/>}/>
           <Route path='/Tweet/:id' element={<Tweet/>}/>
+          <Route path='/Profil' element={<Profil/>}/>
         </Routes>
         <Nav/>
       </UserContextProvider>

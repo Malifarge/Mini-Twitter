@@ -48,7 +48,7 @@ export default Home = () =>{
         <View style={globalStyles.container}>
             {tweets && <FlatList
                 data={tweets}
-                renderItem={({item})=><TweetCard tweet={item}/>}
+                renderItem={({item})=><TweetCard tweet={item} link/>}
                 keyExtractor={item=> item.created_at}
             />}
             <View style={homeStyle.container}>
