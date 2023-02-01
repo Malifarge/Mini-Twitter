@@ -10,17 +10,17 @@ const UserContextProvider = ({ children }) => {
   const [token, setToken] = useState(null)
   const [user, setUser] = useState(null)
 
-  useEffect(() => {
-    myLocalToken()
-  }, [])
+  // useEffect(() => {
+  //   myLocalToken()
+  // }, [])
 
-    const myLocalToken = async()=>{
-        const localToken = await AsyncStorage.getItem('token')
+  //   const myLocalToken = async()=>{
+  //       const localToken = await AsyncStorage.getItem('token')
 
-    if (localToken) {
-      setToken(localToken)
-    }
-    }
+  //   if (localToken) {
+  //     setToken(localToken)
+  //   }
+  //   }
 
   useEffect(() => {
     setUserWithToken()
@@ -28,7 +28,7 @@ const UserContextProvider = ({ children }) => {
 
     const setUserWithToken= async() =>{
         if (token) {
-           await AsyncStorage.setItem('token', token)
+          //  await AsyncStorage.setItem('token', token)
             getUser()
           }
     }
@@ -39,7 +39,7 @@ const UserContextProvider = ({ children }) => {
   }
 
   const logout = async() => {
-    await AsyncStorage.removeItem('token')
+    // await AsyncStorage.removeItem('token')
     setUser(null)
   }
 

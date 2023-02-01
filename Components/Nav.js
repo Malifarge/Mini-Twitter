@@ -1,29 +1,16 @@
-import { StyleSheet, View, Text } from 'react-native'
+import {  View, Text } from 'react-native'
 import { Link } from 'react-router-native'
+import navStyles from '../Styles/Nav'
 
-const styles = StyleSheet.create({
-  bottomBar: {
-    height: 60,
-    display: 'flex',
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-around',
-    position: 'fixed',
-    bottom: 0,
-    backgroundColor: '#fff',
-    borderTopWidth: 1,
-    paddingBottom: 10
-  }
-})
 
 const Nav = () => {
   return (
-    <View style={styles.bottomBar}>
+    <View style={navStyles.bottomBar}>
       <Link to='/'>
-        <Text>Home</Text>
+        <Text style={navStyles.text}>Home</Text>
       </Link>
-      <Link to='/login'>
-        <Text>Login</Text>
+      <Link to='/signup'>
+        <Text style={navStyles.text}>Signup</Text>
       </Link>
     </View>
   )

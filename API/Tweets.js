@@ -1,14 +1,11 @@
 
-import { API_KEY } from 'react-native-dotenv'
 
 const FetchAllTweets = async () =>{
-
-    console.log(API_KEY)
     
     const request = await fetch('https://hzplqosigklsspekvjey.supabase.co/rest/v1/Tweets?select=*',{
         headers:{
-            apikey: API_KEY,
-            Authorization: `Bearer ${API_KEY}`
+            apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imh6cGxxb3NpZ2tsc3NwZWt2amV5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2NzUwNzYyMzksImV4cCI6MTk5MDY1MjIzOX0.J538y4TQp5l7ni4HYgoPKLG4cmpw3TtDenKPeqtza7Y",
+            Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imh6cGxxb3NpZ2tsc3NwZWt2amV5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2NzUwNzYyMzksImV4cCI6MTk5MDY1MjIzOX0.J538y4TQp5l7ni4HYgoPKLG4cmpw3TtDenKPeqtza7Y`
         },
     })
 
