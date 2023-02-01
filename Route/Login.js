@@ -7,7 +7,7 @@ import signupStyles from "../Styles/Signup"
 
 export default Login = () =>{
 
-    const {user,setUser} = useContext(UserContext)
+    const {user,setUser,setToken} = useContext(UserContext)
 
     const [password,setPassword] = useState('123456')
     const [email,setEmail] = useState('malifarge.thomas9+1@gmail.com')
@@ -28,10 +28,8 @@ export default Login = () =>{
         }
 
         const response = await LogUSer(body)
-        
-        const user = await User(response.access_token)
-        
-        setUser(user)
+
+        setToken(response.access_token)
         
     }
 

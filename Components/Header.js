@@ -14,7 +14,7 @@ export const Header = () =>{
         <View style={headerStyles.headerContainer}>
             <View style={headerStyles.container}>
                 <Image source={require('../images/logo.png')} style={headerStyles.img}/>
-                <Text style={headerStyles.text}>Wolfer</Text>
+                <Text style={headerStyles.text}>Wolffer</Text>
             </View>
             {user && <View style={headerStyles.container}>
                     <Text>{user.user_metadata.firstName.substr(0,1)}.{user.user_metadata.lastName}</Text>
