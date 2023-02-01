@@ -13,6 +13,10 @@ const profilStyles = StyleSheet.create({
     },
     info:{
         marginBottom:10,
+    },
+    buttonContainer:{
+        flexDirection: "row",
+        justifyContent: "space-around",
     }
 })
 

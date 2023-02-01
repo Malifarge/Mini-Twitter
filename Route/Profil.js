@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react"
 import { Button, FlatList, Text, TextInput, View } from "react-native"
-import { FetchPutTweet, FetchUserTweets } from "../API/Tweets"
+import { FetchDeleteTweet, FetchPutTweet, FetchUserTweets } from "../API/Tweets"
 import { TweetCard } from "../Components/TweetCard"
 import { UserContext } from "../Context/User"
 import globalStyles from "../Styles/Global"
@@ -40,6 +40,11 @@ export const Profil = () =>{
         FetchTweets()
      }
 
+     const handlePressDelete = async(id) => {
+        await FetchDeleteTweet(id,token)
+        FetchTweets()
+     }
+
     return(
         <View style={globalStyles.container}>
             <View style={profilStyles.container}>
@@ -50,16 +55,23 @@ export const Profil = () =>{
                 <Text style={profilStyles.info}>lastName: {user.user_metadata.lastName}</Text>
                 <Text style={profilStyles.info}>Email: {user.email}</Text>
             </View>
+            <View style={profilStyles.container}>
                 <Text style={profilStyles.titre}>Mes tweets</Text>
-                {tweets && <FlatList
+            </View>    
+            {tweets && 
+                <FlatList
                     data={tweets}
-                    renderItem={({item})=><><TweetCard tweet={item} link/>
-                    <View>
-                        <Button title="modifier?" onPress={()=>handlePressPut(item.id)} />
-                    </View></>}
+                    renderItem={({item})=>
+                        <>
+                            <TweetCard tweet={item} link/>
+                            <View style={profilStyles.buttonContainer}>
+                                <Button title="edit?" onPress={()=>handlePressPut(item.id)} />
+                                <Button title="delete" color="#FC7987" onPress={()=>{handlePressDelete(item.id)}}/>
+                            </View>
+                         </>}
                     keyExtractor={item=> item.created_at}
                 />
-                }
+            }
             
             {putTweet && <View style={homeStyle.container}>
                 <Text>Texte</Text>
