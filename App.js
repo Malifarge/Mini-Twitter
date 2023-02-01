@@ -5,6 +5,7 @@ import { UserContextProvider } from './Context/User';
 import Home from './Route/Home';
 import Login from './Route/Login';
 import Signup from './Route/Signup';
+import { Tweet } from './Route/Tweet';
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
           <Route path='/' element={<Home/>}/>
           <Route path='/login' element={<Login/>}/>
           <Route path='/signup' element={<Signup/>}/>
+          <Route path='/Tweet/:id' element={<Tweet/>}/>
         </Routes>
         <Nav/>
       </UserContextProvider>

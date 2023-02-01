@@ -1,8 +1,9 @@
 import { useContext, useEffect, useState } from "react"
 import { Button, Text, TextInput, View } from "react-native"
-import { useNavigate } from "react-router-native"
+import { Link, useNavigate } from "react-router-native"
 import {   LogUSer, User } from "../API/User"
 import { UserContext } from "../Context/User"
+import loginStyles from "../Styles/Login"
 import signupStyles from "../Styles/Signup"
 
 export default Login = () =>{
@@ -62,6 +63,7 @@ export default Login = () =>{
 
            
             <Button title="Log" onPress={handleSubmit}/>
+            <Link to={'/signup'} style={loginStyles.link}><Text>Pas de compte? Créez en un en cliquant ici</Text></Link>
 
         </View>
     )
