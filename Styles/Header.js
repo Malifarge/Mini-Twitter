@@ -1,9 +1,13 @@
 import { StyleSheet } from "react-native";
 
 const headerStyles = StyleSheet.create({
+    headerContainer:{
+        flexDirection: "row",
+        justifyContent: 'space-around',
+        alignItems: "center"
+    },  
     container:{
         marginTop: 50,
-        margin: 20,
         flexDirection: "row",
         alignItems: "center",
     },
@@ -15,6 +19,9 @@ const headerStyles = StyleSheet.create({
         marginLeft: 20,
         fontSize:30,
         color:"#FC7987"
+    },
+    gap:{
+        marginLeft: 20,
     }
 })
 

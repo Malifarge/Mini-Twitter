@@ -9,8 +9,8 @@ export default Login = () =>{
 
     const {user,setUser} = useContext(UserContext)
 
-    const [password,setPassword] = useState('')
-    const [email,setEmail] = useState('')
+    const [password,setPassword] = useState('123456')
+    const [email,setEmail] = useState('malifarge.thomas9+1@gmail.com')
 
     const navigate = useNavigate()
 
@@ -28,8 +28,9 @@ export default Login = () =>{
         }
 
         const response = await LogUSer(body)
-
-        const user = await User(response)
+        
+        const user = await User(response.access_token)
+        
         setUser(user)
         
     }
