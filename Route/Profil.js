@@ -85,6 +85,15 @@ export const Profil = () =>{
         setEditUser(false)
         setToken(null)
         setToken(token)
+        
+        tweets.forEach(async tweet=>{
+            const id = tweet.id
+            const body={
+                User_name: `${firstName} ${lastName}`
+            }
+            await FetchPutTweet(id,token,body)
+            FetchTweets()
+        })
      }
 
      const handleEditPress = () =>{
