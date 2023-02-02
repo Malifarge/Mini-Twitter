@@ -9,7 +9,7 @@ const TweetStyles = StyleSheet.create({
     padding: 20,
   },
   titre: {
-    fontSize: 25
+    fontSize: 18
   },
   date:{
     fontSize: 10,

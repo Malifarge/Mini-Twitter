@@ -1,5 +1,4 @@
 
-
 const FetchAllTweets = async (token) =>{
     
     const request = await fetch('https://hzplqosigklsspekvjey.supabase.co/rest/v1/Tweets?select=*',{
@@ -11,8 +10,8 @@ const FetchAllTweets = async (token) =>{
 
     const response = await request.json()
     return response
-    
-} 
+
+    } 
 
 const CreateTweet = async (body,token) =>{
 

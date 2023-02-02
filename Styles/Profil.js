@@ -5,6 +5,10 @@ const profilStyles = StyleSheet.create({
         fontSize: 25,
         justifyContent: "center",
     },
+    profilContainer:{
+        flexDirection: "row",
+        justifyContent: "space-between",
+    },
     container:{
         borderBottomWidth:2,
         borderColor: "#FC7987",
